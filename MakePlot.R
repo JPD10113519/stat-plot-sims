@@ -1,3 +1,4 @@
+# run lines 4-13 to plot a single simulated set of points
 slopes = as.array(1:trials)
 for(z in 1:trials) {
   xrands = as.array(runif(points,0,1))
@@ -8,8 +9,8 @@ for(z in 1:trials) {
      xnums[x] <- round(qnorm(xrands[x],meanx,stdevx,TRUE,FALSE))
      ynums[x] <- round(qnorm(yrands[x],meany,stdevy,TRUE,FALSE))
   }
-  plot(xnums,ynums)
-  abline(lm(ynums~xnums))
+  #plot(xnums,ynums) # draws the graph for this current simulation
+  #abline(lm(ynums~xnums)) # draws the regression line
   slopes[z] <- summary(lm(ynums~xnums))$coefficients["xnums", "Estimate"]
 }
 counter = 0
