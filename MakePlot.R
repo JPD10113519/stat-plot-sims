@@ -20,3 +20,5 @@ for(number in slopes) {
   }
 }
 print(counter)
+#plot(1:trials, slopes) # makes a plot of all generated slopes
+#abline(h=observedslope, col = "red", lty = "dashed") # draws your observed slope as a dotted line through the generated slopes
